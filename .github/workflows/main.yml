@@ -28,6 +28,8 @@ jobs:
             node-version: 12
       - name: instaling surge
         run: npm install -g surge
+      -name: build development server
+       run: yarn build
       - name: deploying surge
         run: surge ./build bootcamp-by-uap.surge.sh --token ${{secrets.SURGE_SECRET_2}}
 
