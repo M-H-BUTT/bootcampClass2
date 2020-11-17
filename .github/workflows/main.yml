@@ -26,12 +26,14 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
             node-version: 12
-      - name: instaling surge
-        run: npm install -g surge
+      
       - name: installing yarn
         run: npm install -g yarn
       - name: build development server
         run: yarn build
+
+      - name: instaling surge
+        run: npm install -g surge
       - name: deploying surge
         run: surge ./build bootcamp-by-uap.surge.sh --token ${{secrets.SURGE_SECRET_2}}
 
